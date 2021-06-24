@@ -1,0 +1,126 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Cantarell;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 20px;
+}
+
+window#waybar {
+    background-color: #10161A;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: #137CBD;
+    color: #48AFF0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: #2B95D6;
+}
+
+#workspaces button.focused {
+    color: #FFFFFF;
+}
+
+#workspaces button.urgent {
+    background-color: #DB3737;
+}
+
+#workspaces button.focused + #mode + #custom-arrow1 {
+    background-color: #48AFF0;
+}
+
+#mode {
+    background-color: #137CBD;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#clock {
+    background-color: #0A6640;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio {
+    background-color: #15B371;
+}
+
+#tray {
+    padding-left: 0;
+    background-color: #15B371;
+}
+
+#window {
+    background-color: #0E5A8A;
+    padding: 0 10px;
+}
+
+#custom-arrow1 {
+    font-size: 20px;
+    color: #137CBD;
+    background-color: #0E5A8A;
+}
+
+#custom-arrow2 {
+    font-size: 20px;
+    color: #0E5A8A;
+}
+
+#custom-arrow3 {
+    font-size: 20px;
+    color: #0A6640;
+}
+
+#custom-arrow4 {
+    font-size: 20px;
+    background-color: #0A6640;
+    color: #15B371;
+}

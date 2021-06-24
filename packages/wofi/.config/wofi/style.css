@@ -1,0 +1,39 @@
+window {
+  border-radius: 5px;
+  background-color: #30404d;
+}
+
+#input {
+  font-size: 16px;
+  height: 40px;
+  border-radius: 3px 3px 0 0;
+  line-height: 40px;
+  background: rgba(16,22,26,.3);
+  color: #f5f8fa;
+  border: 0 none;
+  outline: none;
+}
+
+#outer-box {
+  border-radius: 5px;
+  background-color: #30404d;
+}
+
+#scroll {
+  margin: 0 5px;
+}
+
+#inner-box {
+  margin-top: 5px;
+}
+
+#entry { 
+  padding: 5px 8px;
+}
+
+#entry:selected {
+  background-color: #202B33;
+  border-radius: 2px;
+  border: 0 none;
+  outline: none;
+} 
