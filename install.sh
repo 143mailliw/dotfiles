@@ -6,6 +6,7 @@ stow -t $HOME -d ./packages/ sway
 stow -t $HOME -d ./packages/ waybar
 stow -t $HOME -d ./packages/ wofi
 stow -t $HOME -d ./packages/ mpd
+stow -t $HOME -d ./packages/ zsh 
 
 echo Creating directories...
 mkdir -p /home/william341/.local/share/mpd/
