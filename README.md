@@ -10,7 +10,7 @@ Installation uses GNU stow, for easy updating and managment.
 ### Install
 ```
 cd ~
-git clone https://github.com/143mailliw/dotfiles
+git clone --recurse-submodules https://github.com/143mailliw/dotfiles
 cd dotfiles
 ./install.sh
 ```
