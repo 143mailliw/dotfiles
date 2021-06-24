@@ -5,7 +5,7 @@ My set of dotfiles. Unfinished.
 Installation uses GNU stow, for easy updating and managment.
 
 ### Dependencies
-`alacritty, mpd, nvim, python-nvim, sway, waybar, wofi, grim, slurp, wl-clipboard, clipman, stow, node`
+`alacritty, mpd, nvim, python-nvim, sway, waybar, wofi, grim, slurp, wl-clipboard, clipman, stow, node, zsh`
 
 ### Install
 ```
