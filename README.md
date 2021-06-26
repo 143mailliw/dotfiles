@@ -5,15 +5,16 @@ My set of dotfiles. Unfinished.
 Installation uses GNU stow, for easy updating and managment.
 
 ### Dependencies
-`alacritty, mpd, nvim, python-nvim, sway, waybar, wofi, grim, slurp, wl-clipboard, clipman, stow, node, zsh`
+`sudo pacman -S alacritty mpd neovim python-neovim sway waybar wofi grim slurp wl-clipboard clipman stow node zsh ttf-hack powerline-fonts`
 
 ### Install
-```
+```bash
 cd ~
 git clone --recurse-submodules https://github.com/143mailliw/dotfiles
 cd dotfiles
-./install.sh
+./sync.sh # you should run this every pull
 ```
+Updating also uses `sync.sh`.
 
 ### Uninstall
 ```

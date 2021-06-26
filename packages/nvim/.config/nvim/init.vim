@@ -41,7 +41,6 @@ call plug#end()
 
 " vim
 set background=dark
-colorscheme PaperColor
 set number
 set laststatus=2
 set hidden
@@ -66,7 +65,7 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
+set signcolumn=number
 
 " Tabs
 set tabstop=2

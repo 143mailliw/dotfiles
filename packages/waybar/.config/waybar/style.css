@@ -107,20 +107,24 @@ label:focus {
     font-size: 20px;
     color: #137CBD;
     background-color: #0E5A8A;
+    font-family: Hack;
 }
 
 #custom-arrow2 {
     font-size: 20px;
     color: #0E5A8A;
+    font-family: Hack;
 }
 
 #custom-arrow3 {
     font-size: 20px;
     color: #0A6640;
+    font-family: Hack;
 }
 
 #custom-arrow4 {
     font-size: 20px;
     background-color: #0A6640;
     color: #15B371;
+    font-family: Hack;
 }
