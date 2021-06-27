@@ -5,7 +5,7 @@ My set of dotfiles. Unfinished.
 Installation uses GNU stow, for easy updating and managment.
 
 ### Dependencies
-`sudo pacman -S alacritty mpd neovim python-neovim sway waybar wofi grim slurp wl-clipboard clipman stow node zsh ttf-hack powerline-fonts gnome-themes-extra`
+`sudo pacman -S alacritty mpd neovim python-neovim sway waybar wofi grim slurp wl-clipboard clipman stow node zsh ttf-hack powerline-fonts gnome-themes-extra polkit-gnome`
 
 ### Install
 ```bash
