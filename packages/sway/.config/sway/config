@@ -208,6 +208,14 @@ bar {
      swaybar_command waybar
 }
 
+# GTK theme
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+}
+
+
 # Print Screen
 bindsym Print exec grim - | wl-copy
 bindsym Alt+Print exec grim -g "$(slurp)" - | wl-copy
