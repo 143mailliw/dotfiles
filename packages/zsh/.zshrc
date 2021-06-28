@@ -10,8 +10,8 @@ compinit
 zstyle ':completion:*' menu select 
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=25000
+SAVEHIST=25000
 bindkey -e
 
 bindkey  "^[[H"   beginning-of-line
