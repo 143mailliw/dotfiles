@@ -26,7 +26,6 @@ Plug 'gioele/vim-autoswap'
 Plug 'NLKNguyen/papercolor-theme' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'spinks/vim-leader-guide'
@@ -86,6 +85,7 @@ nmap <leader>fs :up<CR>
 nmap <leader>qvo :e $MYVIMRC<CR>
 nmap <leader>qvs :source %<CR>
 nmap <leader>wc :q<CR>
+nmap <leader>bn :enew<CR>
 
 " coc
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -141,6 +141,7 @@ let g:lmap.f.t = 'toggle tree'
 let g:lmap.b = {'name': 'buffers'}
 let g:lmap.b.s = 'switch buffer'
 let g:lmap.b.c = 'close buffer'
+let g:lmap.b.n = 'new buffer'
 
 " windows (w)
 let g:lmap.w = {'name': 'windows'}
