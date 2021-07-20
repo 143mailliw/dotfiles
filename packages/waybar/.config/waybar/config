@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/arrow1", "sway/window", "custom/arrow2"],
-    "modules-right": ["mpd", "custom/arrow3", "clock", "custom/arrow4", "pulseaudio", "tray"],
+    "modules-right": ["mpd", "custom/arrow3", "clock", "custom/arrow4", "pulseaudio", "battery", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -54,6 +54,18 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10
+    },
+        "battery": {
+        "format": "{capacity}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
     },
     "clock": {
         // "timezone": "America/New_York",

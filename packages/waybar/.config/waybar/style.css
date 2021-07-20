@@ -85,6 +85,11 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
+#battery {
+    background-color: #15B371;
+    padding-left: 0;
+}
+
 label:focus {
     background-color: #000000;
 }

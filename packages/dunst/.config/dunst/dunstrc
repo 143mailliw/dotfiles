@@ -1,0 +1,24 @@
+[global]
+font = Cantarell 11
+corner_radius = 3
+geometry = "600x50-10+10"
+padding = 7
+horizontal_padding = 7
+shrink = true
+min_icon_size = 34
+max_icon_size = 34
+markup = "full"
+frame_width = 1
+frame_color = "#202B33"
+separator_color = "frame"
+seperator_height = 1
+format = "<span size='small'>%a</span>\n<b>%s</b>\n%b"
+word_wrap = true
+show_indicators = false
+vertical_alignment = "top"
+
+[urgency_normal]
+background = "#30404D"
+
+[urgency_critical]
+background = "#DB3737"
