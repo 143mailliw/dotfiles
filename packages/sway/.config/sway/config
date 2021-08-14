@@ -237,4 +237,7 @@ bindsym Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | selec
 # Notifications
 exec dunst
 
+# Screen Locking
+bindsym $mod+Shift+P exec swaylock
+
 include /etc/sway/config.d/*
