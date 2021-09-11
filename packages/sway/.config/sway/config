@@ -239,8 +239,4 @@ exec dunst
 # Screen Locking
 bindsym $mod+Shift+P exec swaylock
 
-# Clipboard
-exec wl-paste -t text --watch clipman store
-exec wl-paste -pw wl-copy
-
 include /etc/sway/config.d/*
