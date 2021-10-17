@@ -2,6 +2,7 @@ vim.o.termguicolors = true
 vim.g.mapleader = ' '
 
 require('plugins')
+require('keybinds')
 require('pluginsettings')
 
 --

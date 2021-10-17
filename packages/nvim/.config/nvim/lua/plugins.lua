@@ -1,25 +1,17 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  
   --
   -- Appearance
   --
 
-  -- Icons
-  use 'ryanoasis/vim-devicons'
   -- Calvera Dark (theme)
   use 'yashguptaz/calvera-dark.nvim'
   -- Comment indicators
   use {
     'folke/todo-comments.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    config = function()
-      require('todo-comments').setup {
-        
-      }
-    end
   }
   -- Status Line
   use 'hoob3rt/lualine.nvim'
@@ -28,15 +20,37 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
- 
+  -- Buffer Line
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+  -- LSP kind
+  use 'onsails/lspkind-nvim'
 
   --
   -- Functionality
   --
+
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- Trouble
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
+  -- WhichKey
+  use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key'},
+  }
+  -- Auto Pairs
+  use 'jiangmiao/auto-pairs'
+  -- LazyGit
+  use 'kdheepak/lazygit.nvim'
 
   --
   -- LSP
@@ -44,6 +58,7 @@ return require('packer').startup(function()
 
   -- LSP Config
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
   -- nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
