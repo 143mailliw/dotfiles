@@ -7,3 +7,5 @@ stow -D -t $HOME -d ./packages/ sway
 stow -D -t $HOME -d ./packages/ waybar
 stow -D -t $HOME -d ./packages/ wofi
 stow -D -t $HOME -d ./packages/ zsh
+stow -D -t $HOME -d ./packages/ dunst
+stow -D -t $HOME -d ./packages/ kitty
