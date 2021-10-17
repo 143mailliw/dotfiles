@@ -1,0 +1,12 @@
+# BEGIN_KITTY_THEME
+# Glacier
+include current-theme.conf
+# END_KITTY_THEME
+
+font_family hack regular
+bold_font hack bold
+italic_font hack regular
+bold_italic hack bold italic
+font_size 10.0
+
+enable_audio_bell no

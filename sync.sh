@@ -8,6 +8,7 @@ stow -t $HOME -d ./packages/ wofi
 stow -t $HOME -d ./packages/ mpd
 stow -t $HOME -d ./packages/ zsh 
 stow -t $HOME -d ./packages/ dunst
+stow -t $HOME -d ./packages/ kitty
 
 echo Creating directories...
 mkdir -p /home/william341/.local/share/mpd/
