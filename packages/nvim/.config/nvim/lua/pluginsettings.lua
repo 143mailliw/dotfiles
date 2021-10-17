@@ -1,5 +1,5 @@
--- LSP installer
-local lsp_installer = require("nvim-lsp-installer")
+-- LSP
+local lsp_installer = require 'nvim-lsp-installer'
 
 lsp_installer.on_server_ready(function(server)
     local opts = {
@@ -18,6 +18,7 @@ lsp_installer.on_server_ready(function(server)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
+
 -- Calvera
 vim.g.calvera_italic_keywords = false;
 vim.g.calvera_borders = true;
@@ -30,6 +31,12 @@ require'calvera'.set();
 require'lualine'.setup {
   options = {
     theme = 'calvera-nvim'
+  },
+  sections = {
+    lualine_c = {{
+      'diagnostics',
+      sources = {"nvim_lsp"}
+    }, 'lsp_progress'},
   }
 };
 

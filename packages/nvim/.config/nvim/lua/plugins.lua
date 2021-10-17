@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
   }
   -- LSP kind
   use 'onsails/lspkind-nvim'
+  -- LSP status
+  use 'arkav/lualine-lsp-progress'
 
   --
   -- Functionality
