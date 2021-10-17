@@ -10,3 +10,4 @@
 [submodule "packages/zsh/.config/zsh/zsh-syntax-highlighting"]
 	path = packages/zsh/.config/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
