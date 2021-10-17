@@ -231,8 +231,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Print Screen
 bindsym Print exec grim - | wl-copy
-bindsym Alt+Print exec grim -g "$(slurp)" - | wl-copy
-bindsym Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
+bindsym Alt+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
 
 # Notifications
 exec dunst
