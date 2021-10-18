@@ -35,6 +35,8 @@ return require('packer').startup(function(use)
   use 'folke/twilight.nvim'
   -- Rainbow
   use 'p00f/nvim-ts-rainbow'
+  -- Indent Guides
+  use 'lukas-reineke/indent-blankline.nvim'
 
   --
   -- Functionality
@@ -63,6 +65,8 @@ return require('packer').startup(function(use)
   use 'goolord/alpha-nvim'
   -- Discord Presence
   use 'andweeb/presence.nvim'
+  -- Sleuth
+  use 'tpope/vim-sleuth'
 
   --
   -- LSP

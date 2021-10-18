@@ -69,6 +69,13 @@ dashboard.section.buttons.val = {
 
 require'alpha'.setup(dashboard.opts)
 
+-- Indent Guides
+require("indent_blankline").setup {
+  show_end_of_line = true,
+  show_current_context = true,
+  buftype_exclude = {"terminal", "telescope", "nofile"}
+}
+
 -- Shade
 require'shade'.setup({
   overlay_opacity = 50,
