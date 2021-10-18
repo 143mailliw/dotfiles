@@ -30,7 +30,11 @@ require'lualine'.setup {
     lualine_c = {{
       'diagnostics',
       sources = {"nvim_lsp"}
-    }, 'lsp_progress'},
+    }},
+  },
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_z = {'tabs'}
   }
 };
 
@@ -41,19 +45,6 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-}
-
--- Buffer Line
-require('bufferline').setup {
-  options = {
-    close_command = "bdelete! %d",
-    left_mouse_command = "buffer %d",
-    right_mouse_command = nil,
-    tab_size = 12,
-    diagnostics = "nvim_lsp",
-    seperator_style = "thick",
-    sort_by = "id",
-  }
 }
 
 -- nvim-cmp
