@@ -33,7 +33,11 @@ require'lualine'.setup {
     lualine_c = {{
       'diagnostics',
       sources = {"nvim_lsp"}
-    }, 'lsp_progress'},
+    }},
+  },
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_z = {'tabs'}
   }
 };
 

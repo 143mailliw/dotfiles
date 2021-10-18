@@ -14,13 +14,13 @@ return require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
   }
   -- Status Line
-  use 'hoob3rt/lualine.nvim'
+  use 'shadmansaleh/lualine.nvim'
   -- TreeSitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  -- Buffer Line
+  -- Tab Line
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
