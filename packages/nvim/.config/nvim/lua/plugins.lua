@@ -59,8 +59,8 @@ return require('packer').startup(function(use)
   use "steelsojka/pears.nvim"
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
-  -- Dashboard
-  use 'glepnir/dashboard-nvim'
+  -- Alpha
+  use 'goolord/alpha-nvim'
   -- Discord Presence
   use 'andweeb/presence.nvim'
 

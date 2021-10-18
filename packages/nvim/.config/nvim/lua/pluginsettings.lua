@@ -56,7 +56,18 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Dashboard
-vim.g.dashboard_default_executive = 'telescope'
+local dashboard = require("alpha.themes.dashboard")
+
+dashboard.section.buttons.val = {
+  dashboard.button('<Leader>bn', " New file", "<Cmd>new<CR>"),
+  dashboard.button('<Leader>ff', " Find file", "<Cmd>Telescope find_files<CR>"),
+  dashboard.button('<Leader>fr', " Recent", "<Cmd>Telescope oldfiles<CR>"),
+  dashboard.button('<Leader>nc', " Config", "<Cmd>cd ~/.config/nvim<CR>"),
+  dashboard.button('<Leader>ns', " Packer sync", "<Cmd>PackerSync<CR>"),
+  dashboard.button('q', " Quit", "<Cmd>:qa<CR>")
+}
+
+require'alpha'.setup(dashboard.opts)
 
 -- Shade
 require'shade'.setup({

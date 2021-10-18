@@ -6,14 +6,16 @@ local keymap = {
     n = {"<Cmd>new<CR>", "new"},
     v = {"<Cmd>vnew<CR>", "vertical new"},
     d = {"<Cmd>bdelete<CR>", "delete"},
-    f = {"<Cmd>Telescope buffers<CR>", "buffers"}
+    f = {"<Cmd>Telescope buffers<CR>", "buffers"},
+    a = {"<Cmd>wall<CR>", "write all"}
   },
   f = {
     name = "find",
     f = {"<Cmd>Telescope find_files<CR>", "files"},
     g = {"<Cmd>Telescope live_grep<CR>", "grep"},
     b = {"<Cmd>Telescope buffers<CR>", "buffers"},
-    h = {"<Cmd>Telescope help_tags<CR>", "help tags"}
+    h = {"<Cmd>Telescope help_tags<CR>", "help tags"},
+    r = {"<Cmd>Telescope oldfiles<CR>", "recent"}
   },
   g = {
     name = "go to",
@@ -30,9 +32,16 @@ local keymap = {
     l = {"<Cmd>LazyGit<CR>", "lazygit"},
     s = {"<Cmd>Telescope git_status<CR>", "status"}
   },
+  n = {
+    name = "neovim",
+    c = {"<Cmd>cd ~/.config/nvim<CR>", "go to config"},
+    s = {"<Cmd>PackerSync<CR>", "packer sync"},
+    l = {"<Cmd>LspInstallInfo<CR>", "lsp installer"},
+    i = {"<Cmd>LuaCacheLog<CR>", "impatient"}
+  },
   a = {
     name = "appearence",
-    t = {"<Cmd>Twilight<CR>", "twilight"}
+    t = {"<Cmd>Twilight<CR>", "twilight"},
   }
 }
 
