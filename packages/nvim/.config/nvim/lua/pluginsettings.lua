@@ -21,6 +21,9 @@ vim.g.calvera_hide_eob = true;
 
 require'calvera'.set();
 
+-- Pears
+require "pears".setup()
+
 -- Lualine
 require'lualine'.setup {
   options = {
@@ -41,7 +44,24 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+  }
 }
+
+-- Dashboard
+vim.g.dashboard_default_executive = 'telescope'
+
+-- Shade
+require'shade'.setup({
+  overlay_opacity = 50,
+  opacity_step = 1,
+})
+
+-- Twilight
+require("twilight").setup {}
 
 -- Buffer Line
 require('bufferline').setup {

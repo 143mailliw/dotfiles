@@ -29,6 +29,12 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   -- LSP status
   use 'arkav/lualine-lsp-progress'
+  -- Shade
+  use 'sunjon/shade.nvim'
+  -- Twilight
+  use 'folke/twilight.nvim'
+  -- Rainbow
+  use 'p00f/nvim-ts-rainbow'
 
   --
   -- Functionality
@@ -50,9 +56,13 @@ return require('packer').startup(function(use)
     requires = {'liuchengxu/vim-which-key'},
   }
   -- Auto Pairs
-  use 'jiangmiao/auto-pairs'
+  use "steelsojka/pears.nvim"
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
+  -- Dashboard
+  use 'glepnir/dashboard-nvim'
+  -- Discord Presence
+  use 'andweeb/presence.nvim'
 
   --
   -- LSP

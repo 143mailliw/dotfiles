@@ -29,6 +29,10 @@ local keymap = {
     name = "version control",
     l = {"<Cmd>LazyGit<CR>", "lazygit"},
     s = {"<Cmd>Telescope git_status<CR>", "status"}
+  },
+  a = {
+    name = "appearence",
+    t = {"<Cmd>Twilight<CR>", "twilight"}
   }
 }
 
