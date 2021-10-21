@@ -3,7 +3,7 @@ local wk = require('whichkey_setup');
 local keymap = {
   b = {
     name = "buffers",
-    n = {"<Cmd>new<CR>", "enew"},
+    n = {"<Cmd>enew<CR>", "new"},
     v = {"<Cmd>vnew<CR>", "vertical new"},
     d = {"<Cmd>bdelete<CR>", "delete"},
     f = {"<Cmd>Telescope buffers<CR>", "buffers"},
@@ -46,3 +46,6 @@ local keymap = {
 }
 
 wk.register_keymap('leader', keymap)
+
+vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>bnext<CR>', { noremap = true, silent = true });
+vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>bprevious<CR>', { noremap = true, silent = true })
