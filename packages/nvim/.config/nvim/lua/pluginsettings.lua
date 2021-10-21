@@ -59,7 +59,7 @@ require'nvim-treesitter.configs'.setup {
 local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.buttons.val = {
-  dashboard.button('<Leader>bn', " New file", "<Cmd>new<CR>"),
+  dashboard.button('<Leader>bn', " New file", "<Cmd>enew<CR>"),
   dashboard.button('<Leader>ff', " Find file", "<Cmd>Telescope find_files<CR>"),
   dashboard.button('<Leader>fr', " Recent", "<Cmd>Telescope oldfiles<CR>"),
   dashboard.button('<Leader>nc', " Config", "<Cmd>cd ~/.config/nvim<CR>"),
