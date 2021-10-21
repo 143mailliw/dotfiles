@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
     requires = {'liuchengxu/vim-which-key'},
   }
   -- Auto Pairs
-  use "steelsojka/pears.nvim"
+  use "cohama/lexima.vim"
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
   -- Alpha
