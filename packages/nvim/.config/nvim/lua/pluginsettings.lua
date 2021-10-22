@@ -21,9 +21,6 @@ vim.g.calvera_hide_eob = true;
 
 require'calvera'.set();
 
--- Pears
-require "pears".setup()
-
 -- Lualine
 require'lualine'.setup {
   options = {

@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
   -- Twilight
   use 'folke/twilight.nvim'
   -- Rainbow
-  use 'p00f/nvim-ts-rainbow'
+  -- use 'p00f/nvim-ts-rainbow'
   -- Indent Guides
   use 'lukas-reineke/indent-blankline.nvim'
 
