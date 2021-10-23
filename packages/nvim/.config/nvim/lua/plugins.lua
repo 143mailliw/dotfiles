@@ -14,17 +14,12 @@ return require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
   }
   -- Status Line
-  use 'shadmansaleh/lualine.nvim'
+  use 'nvim-lualine/lualine.nvim'
   -- TreeSitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  }
-  -- Tab Line
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons'
-  }
+  } 
   -- LSP kind
   use 'onsails/lspkind-nvim'
   -- LSP status
@@ -67,6 +62,8 @@ return require('packer').startup(function(use)
   use 'andweeb/presence.nvim'
   -- Sleuth
   use 'tpope/vim-sleuth'
+  -- Close Tag
+  use 'windwp/nvim-ts-autotag'
 
   --
   -- LSP

@@ -45,10 +45,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+  autotag = {
+    enable = true
   }
 }
 
@@ -81,19 +79,6 @@ require'shade'.setup({
 
 -- Twilight
 require("twilight").setup {}
-
--- Buffer Line
-require('bufferline').setup {
-  options = {
-    close_command = "bdelete! %d",
-    left_mouse_command = "buffer %d",
-    right_mouse_command = nil,
-    tab_size = 12,
-    diagnostics = "nvim_lsp",
-    seperator_style = "thick",
-    sort_by = "id",
-  }
-}
 
 -- nvim-cmp
 local cmp = require 'cmp'
