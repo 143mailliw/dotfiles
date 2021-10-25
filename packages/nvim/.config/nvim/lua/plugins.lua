@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  } 
+  }
   -- LSP kind
   use 'onsails/lspkind-nvim'
   -- LSP status
@@ -28,10 +28,15 @@ return require('packer').startup(function(use)
   use 'sunjon/shade.nvim'
   -- Twilight
   use 'folke/twilight.nvim'
-  -- Rainbow
-  -- use 'p00f/nvim-ts-rainbow'
   -- Indent Guides
   use 'lukas-reineke/indent-blankline.nvim'
+  -- Git Signs
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  }
 
   --
   -- Functionality
@@ -64,6 +69,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sleuth'
   -- Close Tag
   use 'windwp/nvim-ts-autotag'
+  -- Create directories for new files
+  use 'jghauser/mkdir.nvim'
 
   --
   -- LSP

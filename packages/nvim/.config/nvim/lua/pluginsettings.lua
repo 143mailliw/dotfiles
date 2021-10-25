@@ -117,3 +117,9 @@ cmp.setup({
     zindex = 10000
   }
 })
+
+-- Git Signs
+require('gitsigns').setup()
+
+-- mkdir
+require('mkdir')
