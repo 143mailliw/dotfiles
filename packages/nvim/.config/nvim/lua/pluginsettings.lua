@@ -5,13 +5,28 @@ lsp_installer.on_server_ready(function(server)
     local opts = {
       on_attach = function(client)
         require 'illuminate'.on_attach(client)
+
+        -- update while in insert mode
+        vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+          virtual_text = true,
+          signs = true,
+          underline = true,
+          update_in_insert = true,
+        })
+
+        -- change diagnostic symbols
+        local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+        for type, icon in pairs(signs) do
+          local hl = "LspDiagnosticsSign" .. type
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
       end,
     }
 
     server:setup(opts)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
-
 
 -- Calvera
 vim.g.calvera_italic_keywords = false;
@@ -25,12 +40,6 @@ require'calvera'.set();
 require'lualine'.setup {
   options = {
     theme = 'calvera-nvim'
-  },
-  sections = {
-    lualine_c = {{
-      'diagnostics',
-      sources = {"nvim_lsp"}
-    }},
   },
   tabline = {
     lualine_a = {'buffers'},
@@ -104,5 +113,7 @@ cmp.setup({
   formatting = {
     format = lspkind.cmp_format({with_text = true, maxwidth = 50})
   },
-  documentation = {}
+  documentation = {
+    zindex = 10000
+  }
 })

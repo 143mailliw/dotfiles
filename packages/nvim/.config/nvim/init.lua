@@ -13,6 +13,7 @@ require('pluginsettings')
 vim.o.number = true
 vim.o.laststatus = 2
 vim.o.hidden = true
+vim.o.signcolumn = 'yes'
 
 -- Tabs
 vim.o.expandtab = true
