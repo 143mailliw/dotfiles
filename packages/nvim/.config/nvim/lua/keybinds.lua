@@ -26,6 +26,7 @@ local keymap = {
     t = {"<Cmd>Telescope<CR>", "telescope"},
     a = {"<Cmd>Telescope lsp_code_actions<CR>", "actions"},
     i = {"<Cmd>Telescope lsp_implementations<CR>", "implementations"},
+    b = {"<Cmd>FloatermNew ranger<CR>", "ranger"},
   },
   v = {
     name = "version control",
@@ -47,5 +48,6 @@ local keymap = {
 
 wk.register_keymap('leader', keymap)
 
+-- Buffer switching
 vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>bnext<CR>', { noremap = true, silent = true });
 vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>bprevious<CR>', { noremap = true, silent = true })

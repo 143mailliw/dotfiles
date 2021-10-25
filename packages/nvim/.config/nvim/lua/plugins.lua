@@ -71,6 +71,8 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   -- Create directories for new files
   use 'jghauser/mkdir.nvim'
+  -- FloatTerm
+  use 'voldikss/vim-floaterm'
 
   --
   -- LSP
