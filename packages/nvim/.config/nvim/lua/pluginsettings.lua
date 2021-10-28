@@ -37,9 +37,15 @@ vim.g.calvera_hide_eob = true;
 require'calvera'.set();
 
 -- Lualine
+local gps = require("nvim-gps")
+gps.setup()
+
 require'lualine'.setup {
   options = {
     theme = 'calvera-nvim'
+  },
+  sections = {
+    lualine_c = {{ gps.get_location, condition = gps.is_available }}
   },
   tabline = {
     lualine_a = {'buffers'},
@@ -123,3 +129,6 @@ require('gitsigns').setup()
 
 -- mkdir
 require('mkdir')
+
+-- Auto Pairs
+require('nvim-autopairs').setup{}

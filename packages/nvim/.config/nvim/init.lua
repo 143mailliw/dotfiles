@@ -32,3 +32,5 @@ vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 -- Other
 vim.o.encoding = 'UTF-8'
 vim.o.hidden = true
+vim.o.title = true
+vim.o.titlestring = '%t - %m'

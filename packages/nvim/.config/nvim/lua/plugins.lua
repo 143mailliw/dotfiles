@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     },
   }
+  -- GPS
+  use 'SmiteshP/nvim-gps'
 
   --
   -- Functionality
@@ -58,7 +60,7 @@ return require('packer').startup(function(use)
     requires = {'liuchengxu/vim-which-key'},
   }
   -- Auto Pairs
-  use "cohama/lexima.vim"
+  use "windwp/nvim-autopairs"
   -- LazyGit
   use 'kdheepak/lazygit.nvim'
   -- Alpha
@@ -73,6 +75,8 @@ return require('packer').startup(function(use)
   use 'jghauser/mkdir.nvim'
   -- FloatTerm
   use 'voldikss/vim-floaterm'
+  -- Copilot
+  use 'github/copilot.vim'
 
   --
   -- LSP
