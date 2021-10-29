@@ -84,6 +84,9 @@ return require('packer').startup(function(use)
 
   -- LSP Config
   use 'neovim/nvim-lspconfig'
+  -- Rust
+  use 'simrat39/rust-tools.nvim'
+  -- Installer
   use 'williamboman/nvim-lsp-installer'
   -- nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp'
@@ -94,4 +97,6 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   -- Illuminate
   use 'RRethy/vim-illuminate'
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
 end);

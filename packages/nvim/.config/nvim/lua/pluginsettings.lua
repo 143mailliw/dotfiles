@@ -1,32 +1,65 @@
+-- Git Signs
+require('gitsigns').setup()
+
 -- LSP
+require('lspconfig');
+
+local function onattach(client)
+  require 'illuminate'.on_attach(client)
+
+  local signs = { Error = " ", Warning = " ", Hint = " ", Info = " " }
+  for type, icon in pairs(signs) do
+    local hl = "LspDiagnosticsSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  end
+
+  -- update while in insert mode
+  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    underline = true,
+    update_in_insert = true,
+  })
+end
+
+-- Installer
 local lsp_installer = require 'nvim-lsp-installer'
 
 lsp_installer.on_server_ready(function(server)
     local opts = {
-      on_attach = function(client)
-        require 'illuminate'.on_attach(client)
-
-        -- update while in insert mode
-        vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-          virtual_text = true,
-          signs = true,
-          underline = true,
-          update_in_insert = true,
-        })
-
-        -- change diagnostic symbols
-        local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-
-        for type, icon in pairs(signs) do
-          local hl = "LspDiagnosticsSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-        end
-      end,
+      on_attach = onattach
     }
 
     server:setup(opts)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+-- Rust
+require('rust-tools').setup({
+  tools = { -- rust-tools options
+    autoSetHints = true,
+    hover_with_actions = true,
+    inlay_hints = {
+      show_parameter_hints = false,
+      parameter_hints_prefix = "",
+      other_hints_prefix = "",
+    }
+  },
+  server = {
+    on_attach = onattach,
+    settings = {
+      -- to enable rust-analyzer settings visit:
+      -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+      ["rust-analyzer"] = {
+        -- enable clippy on save
+        checkOnSave = {
+            command = "clippy"
+        },
+      }
+    }
+  }
+})
+require('rust-tools.inlay_hints').set_inlay_hints()
 
 -- Calvera
 vim.g.calvera_italic_keywords = false;
@@ -123,9 +156,6 @@ cmp.setup({
     zindex = 10000
   }
 })
-
--- Git Signs
-require('gitsigns').setup()
 
 -- mkdir
 require('mkdir')
