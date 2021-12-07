@@ -51,7 +51,9 @@ return require('packer').startup(function(use)
   --
   use 'unblevable/quick-scope' -- Move around a line faster
   use 'takac/vim-hardtime' -- I am a duumbass who can't remember keybinds for shit
-  use 'justinmk/vim-sneak' -- Jump to the next/previous occurrence of a string
+  use 'justinmk/vim-sneak' -- Jump to the next/previous occurrence of 2 characters
+  use 'junegunn/vim-slash' -- Better / search
+  use 'tpope/vim-unimpaired' -- Better navigation
 
   --
   -- LSP
