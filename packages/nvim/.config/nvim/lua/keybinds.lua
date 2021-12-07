@@ -5,7 +5,7 @@ local keymap = {
     name = "buffers",
     n = {"<Cmd>enew<CR>", "new"},
     v = {"<Cmd>vnew<CR>", "vertical new"},
-    d = {"<Cmd>bdelete<CR>", "delete"},
+    d = {"<Cmd>silent! bdelete<CR>", "delete"},
     f = {"<Cmd>Telescope buffers<CR>", "buffers"},
     a = {"<Cmd>wall<CR>", "write all"}
   },
@@ -38,7 +38,8 @@ local keymap = {
     c = {"<Cmd>cd ~/.config/nvim<CR>", "go to config"},
     s = {"<Cmd>PackerSync<CR>", "packer sync"},
     l = {"<Cmd>LspInstallInfo<CR>", "lsp installer"},
-    i = {"<Cmd>LuaCacheLog<CR>", "impatient"}
+    i = {"<Cmd>LuaCacheLog<CR>", "impatient"},
+    h = {"<Cmd>HardTimeToggle<CR>", "hardtime"}
   },
   a = {
     name = "appearence",

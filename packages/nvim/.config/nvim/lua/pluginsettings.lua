@@ -7,10 +7,11 @@ require('lspconfig');
 local function onattach(client)
   require 'illuminate'.on_attach(client)
 
-  local signs = { Error = " ", Warning = " ", Hint = " ", Info = " " }
+  -- diagnostic signs
+  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
   for type, icon in pairs(signs) do
-    local hl = "LspDiagnosticsSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
   -- update while in insert mode
@@ -26,13 +27,51 @@ end
 local lsp_installer = require 'nvim-lsp-installer'
 
 lsp_installer.on_server_ready(function(server)
-    local opts = {
-      on_attach = onattach
-    }
+  local opts = {
+    on_attach = onattach,
+  }
 
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
+  if(server.name == 'sumneko_lua') then
+    opts.settings = {
+      Lua = {
+        diagnostics = {
+          globals = { 'vim' }
+        }
+      }
+    }
+  end
+
+  server:setup(opts)
+  vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+-- Telescope
+local telescope_actions = require("telescope.actions.set")
+
+local fixfolds = {
+  hidden = true,
+  attach_mappings = function(_)
+    telescope_actions.select:enhance({
+      post = function()
+	vim.cmd(":normal! zx")
+      end,
+    })
+    return true
+  end,
+}
+
+require('telescope').setup {
+  pickers = {
+    buffers = fixfolds,
+    file_browser = fixfolds,
+    find_files = fixfolds,
+    git_files = fixfolds,
+    grep_string = fixfolds,
+    live_grep = fixfolds,
+    oldfiles = fixfolds,
+    -- I probably missed some
+  },
+}
 
 -- Rust
 require('rust-tools').setup({
@@ -154,6 +193,9 @@ cmp.setup({
   },
   documentation = {
     zindex = 10000
+  },
+  experimental = {
+    ghost_text = true
   }
 })
 

@@ -28,6 +28,9 @@ vim.o.foldcolumn = '2'
 vim.o.foldlevel = 20
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+
 
 -- Other
 vim.o.encoding = 'UTF-8'

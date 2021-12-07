@@ -2,101 +2,67 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  --
+  -- Dependencies
+  --
+  use 'nvim-lua/plenary.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+
   --
   -- Appearance
   --
-
-  -- Calvera Dark (theme)
-  use 'yashguptaz/calvera-dark.nvim'
-  -- Comment indicators
+  use 'yashguptaz/calvera-dark.nvim' -- Color scheme
+  use 'folke/todo-comments.nvim' -- Highlight TODO comments
+  use 'nvim-lualine/lualine.nvim' -- Status line
   use {
-    'folke/todo-comments.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-  }
-  -- Status Line
-  use 'nvim-lualine/lualine.nvim'
-  -- TreeSitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter', -- Better syntax highlighting
     run = ':TSUpdate'
   }
-  -- LSP kind
-  use 'onsails/lspkind-nvim'
-  -- LSP status
-  use 'arkav/lualine-lsp-progress'
-  -- Shade
-  use 'sunjon/shade.nvim'
-  -- Twilight
-  use 'folke/twilight.nvim'
-  -- Indent Guides
-  use 'lukas-reineke/indent-blankline.nvim'
-  -- Git Signs
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-  }
-  -- GPS
-  use 'SmiteshP/nvim-gps'
+  use 'onsails/lspkind-nvim' -- Show graphics in the completion list
+  use 'sunjon/shade.nvim' -- Shade out windows we aren't using
+  use 'folke/twilight.nvim' -- Shade out other areas of the file that we aren't using
+  use 'lukas-reineke/indent-blankline.nvim' -- Indentation guides
+  use 'lewis6991/gitsigns.nvim' -- Git commit signs
+  use 'SmiteshP/nvim-gps' -- Shows where we are in the current file
 
   --
   -- Functionality
   --
+  use 'nvim-telescope/telescope.nvim' -- Find files, buffers, etc.
+  use "folke/trouble.nvim" -- Show diagnostics
+  use {
+    'AckslD/nvim-whichkey-setup.lua', -- Configure whichkey with Lua tables
+    requires = {'liuchengxu/vim-which-key'}, -- Show leader keybindings
+  }
+  use "windwp/nvim-autopairs" -- Automatically insert pairs of characters
+  use 'kdheepak/lazygit.nvim' -- Git client
+  use 'goolord/alpha-nvim' -- Homepage
+  use 'andweeb/presence.nvim' -- Discord RPC
+  use 'tpope/vim-sleuth' -- Auto determine indentation
+  use 'windwp/nvim-ts-autotag' -- TS tag utilities
+  use 'jghauser/mkdir.nvim' -- Create required directories on write
+  use 'voldikss/vim-floaterm' -- Ranger
+  use 'github/copilot.vim' -- Github Copilot
+  use 'tpope/vim-commentary' -- Commenting with 'gc'
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  -- Trouble
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-  }
-  -- WhichKey
-  use {
-    'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key'},
-  }
-  -- Auto Pairs
-  use "windwp/nvim-autopairs"
-  -- LazyGit
-  use 'kdheepak/lazygit.nvim'
-  -- Alpha
-  use 'goolord/alpha-nvim'
-  -- Discord Presence
-  use 'andweeb/presence.nvim'
-  -- Sleuth
-  use 'tpope/vim-sleuth'
-  -- Close Tag
-  use 'windwp/nvim-ts-autotag'
-  -- Create directories for new files
-  use 'jghauser/mkdir.nvim'
-  -- FloatTerm
-  use 'voldikss/vim-floaterm'
-  -- Copilot
-  use 'github/copilot.vim'
+  --
+  -- Movement
+  --
+  use 'unblevable/quick-scope' -- Move around a line faster
+  use 'takac/vim-hardtime' -- I am a duumbass who can't remember keybinds for shit
+  use 'justinmk/vim-sneak' -- Jump to the next/previous occurrence of a string
 
   --
   -- LSP
   --
-
-  -- LSP Config
-  use 'neovim/nvim-lspconfig'
-  -- Rust
-  use 'simrat39/rust-tools.nvim'
-  -- Installer
-  use 'williamboman/nvim-lsp-installer'
-  -- nvim-cmp
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
-  -- LuaSnip
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  -- Illuminate
-  use 'RRethy/vim-illuminate'
-  -- Debugging
-  use 'mfussenegger/nvim-dap'
+  use 'neovim/nvim-lspconfig' -- LSP support
+  use 'simrat39/rust-tools.nvim' -- Rust support
+  use 'williamboman/nvim-lsp-installer' -- Install LSP servers
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP completion
+  use 'hrsh7th/cmp-buffer' -- Complete from current buffer
+  use 'hrsh7th/nvim-cmp' -- Autocompletion handler
+  use 'L3MON4D3/LuaSnip' -- Snippets
+  use 'saadparwaiz1/cmp_luasnip' -- nvim-cmp snippet support
+  use 'RRethy/vim-illuminate' -- Highlight instances of the same symbol
 end);
