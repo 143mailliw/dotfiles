@@ -1,13 +1,1 @@
-[submodule "packages/zsh/.config/zsh/powerlevel10k"]
-	path = packages/zsh/.config/zsh/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
-[submodule "packages/zsh/.config/zsh/zsh-autosuggestions"]
-	path = packages/zsh/.config/zsh/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "packages/zsh/.config/zsh/zsh-history-substring-search"]
-	path = packages/zsh/.config/zsh/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
-[submodule "packages/zsh/.config/zsh/zsh-syntax-highlighting"]
-	path = packages/zsh/.config/zsh/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 
