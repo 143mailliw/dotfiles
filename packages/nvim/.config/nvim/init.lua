@@ -28,12 +28,10 @@ vim.o.foldcolumn = '2'
 vim.o.foldlevel = 20
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-
 
 -- Other
 vim.o.encoding = 'UTF-8'
 vim.o.hidden = true
 vim.o.title = true
+vim.wo.wrap = false
 vim.o.titlestring = '%t - %m'
