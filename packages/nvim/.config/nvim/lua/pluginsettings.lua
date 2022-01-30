@@ -41,6 +41,17 @@ lsp_installer.on_server_ready(function(server)
     }
   end
 
+  if(server.name == 'tsserver') then
+    opts.settings = {
+      init_options = {
+        preferences = {
+          importModuleSpecifierEnding = "js",
+          importModuleSpecifierPreference = "relative",
+        }
+      }
+    }
+  end
+
   server:setup(opts)
   vim.cmd [[ do User LspAttachBuffers ]]
 end)

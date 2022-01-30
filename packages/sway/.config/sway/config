@@ -230,13 +230,19 @@ bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $WOB
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Print Screen
-bindsym Print exec grim - | wl-copy
-bindsym Alt+Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+exec flameshot
+bindsym Print exec flameshot gui
+for_window [app_id="flameshot"] floating enable
 
 # Notifications
 exec dunst
 
 # Screen Locking
 bindsym $mod+Shift+P exec swaylock
+
+# variable stuff
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 include /etc/sway/config.d/*
