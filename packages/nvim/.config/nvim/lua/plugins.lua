@@ -2,6 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use {'lewis6991/impatient.nvim', config = function() require('impatient') end }
 
   --
   -- Dependencies
