@@ -232,7 +232,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Print Screen
 exec flameshot
 bindsym Print exec flameshot gui
-for_window [app_id="flameshot"] floating enable
+for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
 # Notifications
 exec dunst

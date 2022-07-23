@@ -64,3 +64,4 @@ bindkey  "^[[3~"  delete-char
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 source /usr/share/nvm/init-nvm.sh
+

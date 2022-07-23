@@ -1,10 +1,10 @@
-local wk = require('whichkey_setup');
+local wk = require('whichkey_setup')
 
 local keymap = {
   b = {
     name = "buffers",
     n = {"<Cmd>enew<CR>", "new"},
-    v = {"<Cmd>vnew<CR>", "vertical new"},
+    v = {"<Cmd>vnew<CR>", "new vertical"},
     d = {"<Cmd>silent! bdelete<CR>", "delete"},
     f = {"<Cmd>Telescope buffers<CR>", "buffers"},
     a = {"<Cmd>wall<CR>", "write all"}
@@ -26,7 +26,6 @@ local keymap = {
     t = {"<Cmd>Telescope<CR>", "telescope"},
     a = {"<Cmd>Telescope lsp_code_actions<CR>", "actions"},
     i = {"<Cmd>Telescope lsp_implementations<CR>", "implementations"},
-    b = {"<Cmd>FloatermNew ranger<CR>", "ranger"},
   },
   v = {
     name = "version control",
@@ -38,12 +37,6 @@ local keymap = {
     c = {"<Cmd>cd ~/.config/nvim<CR>", "go to config"},
     s = {"<Cmd>PackerSync<CR>", "packer sync"},
     l = {"<Cmd>LspInstallInfo<CR>", "lsp installer"},
-    i = {"<Cmd>LuaCacheLog<CR>", "impatient"},
-    h = {"<Cmd>HardTimeToggle<CR>", "hardtime"}
-  },
-  a = {
-    name = "appearence",
-    t = {"<Cmd>Twilight<CR>", "twilight"},
   }
 }
 
