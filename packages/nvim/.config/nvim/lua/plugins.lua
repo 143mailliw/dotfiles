@@ -42,9 +42,9 @@ return require('packer').startup(function(use)
     requires = 'kevinhwang91/promise-async',
     config = function()
       require('ufo').setup({
-        provider_selector = function()
-          return {'lsp', 'treesitter', 'indent'} -- fallback to TS folds
-        end
+        -- provider_selector = function()
+        --   return {'lsp', 'treesitter', 'indent'} -- fallback to TS folds
+        -- end
       })
     end
   }
@@ -169,9 +169,11 @@ return require('packer').startup(function(use)
 
   -- lsp-installer | manages installing our lsp servers for us
   use {
-    'williamboman/nvim-lsp-installer',
+    'williamboman/mason.nvim',
+    requires = { 'williamboman/mason-lspconfig.nvim' },
     config = function()
-      require('nvim-lsp-installer').setup({})
+      require('mason').setup({})
+      require('mason-lspconfig').setup({})
 
       -- manually add some configuration
       local lspconfig = require("lspconfig");
@@ -228,6 +230,21 @@ return require('packer').startup(function(use)
             }
           }
         }
+      })
+
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      lspconfig.jsonls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
       })
     end
   }
