@@ -155,6 +155,26 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        autotag = {
+          enable = true
+        }
+      })
+    end
+  }
+
+  -- presence | discord rpc
+  use 'andweeb/presence.nvim'
+
+  -- ts-autotag | automatically closes tags in HTML & TSX/JSX
+  use {
+    'windwp/nvim-ts-autotag'
   }
 
   --
@@ -246,6 +266,11 @@ return require('packer').startup(function(use)
         capabilities = capabilities,
         on_attach = on_attach,
       })
+
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = on_attach
+      })
     end
   }
 
@@ -261,7 +286,9 @@ return require('packer').startup(function(use)
   use {
     'ray-x/lsp_signature.nvim',
     config = function()
-      require('lsp_signature').setup()
+      require('lsp_signature').setup({
+        floating_window = false
+      })
     end
   }
 
